@@ -42,6 +42,11 @@ matches:
   - trigger: ":clog" # JS log
     replace: "console.log('DEBUG | $|$');"
 
+  # espanso path
+  - trigger: ":espanwd"
+     replace: "C:\Users\coffe\AppData\Roaming\espanso\match"
+	
+
 # --- PERSONAL BRAND ---
   - trigger: ":email"
     replace: "yourname@domain.com"
