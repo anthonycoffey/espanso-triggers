@@ -1,0 +1,59 @@
+# espanso match file
+# For a complete introduction, visit the official docs at: https://espanso.org/docs/
+# yaml-language-server: $schema=https://raw.githubusercontent.com/espanso/espanso/dev/schemas/match.schema.json
+
+matches:
+# --- DEVOPS ---
+  # example
+  - trigger: ":espanso"
+    replace: "Hi there!"
+    vars:
+      - name: username
+        type: shell
+        params:
+          cmd: "echo $USER"
+
+  # Print the current date
+  - trigger: ":date"
+    replace: "{{mydate}}"
+    vars:
+      - name: mydate
+        type: date
+        params:
+          format: "%m/%d/%Y"
+
+  # Print my current IP address
+  - trigger: ":myip"
+    replace: "{{ip}}"
+    vars:
+      - name: ip
+        type: shell
+        params:
+          cmd: "curl -s https://ifconfig.me"
+
+  - trigger: ":branch"
+    replace: "{{git_branch}}"
+    vars:
+      - name: git_branch
+        type: shell
+        params:
+          cmd: "git rev-parse --abbrev-ref HEAD"
+
+  - trigger: ":clog" # JS log
+    replace: "console.log('DEBUG | $|$');"
+
+# --- PERSONAL BRAND ---
+  - trigger: ":email"
+    replace: "yourname@domain.com"
+
+  - trigger: ":sig"
+    replace: |
+      Best regards,
+      
+      **Your Name**
+      Solutions Architect | AI Engineer
+      *Artist & Digital Creator*
+      [Link to Portfolio/GitHub]
+
+  - trigger: ":dom"
+    replace: "https://yourprimarydomain.com"
