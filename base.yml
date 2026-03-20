@@ -44,8 +44,7 @@ matches:
 
   # espanso path
   - trigger: ":espanwd"
-     replace: "C:\Users\coffe\AppData\Roaming\espanso\match"
-	
+    replace: "C:\\Users\\coffe\\AppData\\Roaming\\espanso\\match"	
 
 # --- PERSONAL BRAND ---
   - trigger: ":email"
