@@ -1,0 +1,196 @@
+# espanso match file
+# For a complete introduction, visit the official docs at: https://espanso.org/docs/
+# yaml-language-server: $schema=https://raw.githubusercontent.com/espanso/espanso/dev/schemas/match.schema.json
+
+matches:
+  # --- DEVOPS ---
+
+  # Print the current date
+  - trigger: ':date'
+    replace: '{{mydate}}'
+    vars:
+      - name: mydate
+        type: date
+        params:
+          format: '%m/%d/%Y'
+
+  # Print my current IP address
+  - trigger: ':myip'
+    replace: '{{ip}}'
+    vars:
+      - name: ip
+        type: shell
+        params:
+          cmd: 'curl -s https://ifconfig.me'
+
+  - trigger: ':branch'
+    replace: '{{git_branch}}'
+    vars:
+      - name: git_branch
+        type: shell
+        params:
+          cmd: 'git rev-parse --abbrev-ref HEAD'
+
+  - trigger: ':clog'
+    replace: "console.log('DEBUG | $|$');"
+
+  # espanso path
+  - trigger: ':espanwd'
+    replace: "C:\\Users\\coffe\\AppData\\Roaming\\espanso\\match"
+
+  # repos path
+  - trigger: ':reposwd'
+    replace: "D:\\repos"
+
+  # ultrasoundai path
+  - trigger: ':uaiwd'
+    replace: "D:\\repos\\ultrasound-ai"
+
+  # Docker
+  - trigger: ':dcu'
+    replace: 'docker-compose up -d'
+
+  - trigger: ':dcd'
+    replace: 'docker-compose down'
+
+  - trigger: ':dcl'
+    replace: 'docker-compose logs -f'
+
+  - trigger: ':dps'
+    replace: 'docker ps'
+
+  # npm
+  - trigger: ':nrd'
+    replace: 'npm run dev'
+
+  - trigger: ':nrb'
+    replace: 'npm run build'
+
+  - trigger: ':nrt'
+    replace: 'npm run test'
+
+  - trigger: ':nri'
+    replace: 'npm install'
+
+  # pip
+  - trigger: ':pipi'
+    replace: 'pip install $|$'
+
+  - trigger: ':pipf'
+    replace: 'pip freeze > requirements.txt'
+
+  # --- GIT ---
+  - trigger: ':gaa'
+    replace: 'git add .'
+
+  - trigger: ':gca'
+    replace: 'git commit -m "$|$"'
+
+  - trigger: ':gps'
+    replace: 'git push origin {{git_branch}}'
+    vars:
+      - name: git_branch
+        type: shell
+        params:
+          cmd: 'git rev-parse --abbrev-ref HEAD'
+
+  - trigger: ':gpl'
+    replace: 'git pull origin {{git_branch}}'
+    vars:
+      - name: git_branch
+        type: shell
+        params:
+          cmd: 'git rev-parse --abbrev-ref HEAD'
+
+  - trigger: ':gst'
+    replace: 'git status'
+
+  - trigger: ':gcb'
+    replace: 'git checkout -b $|$'
+
+  - trigger: ':gco'
+    replace: 'git checkout $|$'
+
+  - trigger: ':glog'
+    replace: 'git log --oneline --graph --decorate'
+
+  - trigger: ':gstash'
+    replace: 'git stash'
+
+  - trigger: ':gpop'
+    replace: 'git stash pop'
+
+  # --- JS/TS ---
+  - trigger: ':cloge'
+    replace: "console.error('ERROR | $|$');"
+
+  - trigger: ':clogw'
+    replace: "console.warn('WARN | $|$');"
+
+  - trigger: ':afn'
+    replace: "async function $|$() {\n  \n}"
+
+  - trigger: ':arr'
+    replace: "const $|$ = async () => {\n  \n};"
+
+  - trigger: ':trycatch'
+    replace: "try {\n  $|$\n} catch (error) {\n  console.error(error);\n}"
+
+  # --- PYTHON ---
+  - trigger: ':pprint'
+    replace: "print(f'DEBUG | {$|$}')"
+
+  - trigger: ':ifmain'
+    replace: "if __name__ == '__main__':"
+
+  - trigger: ':ptry'
+    replace: "try:\n    $|$\nexcept Exception as e:\n    print(f'Error: {e}')"
+
+  - trigger: ':pyenv'
+    replace: 'python -m venv .venv'
+
+  - trigger: ':pyenvact'
+    replace:
+      ".\\.venv\\Scripts\\Activate.ps1"
+      # vars:  ** UNUSED, LEAVING FOR REFERENCE **
+      # - name: username
+      # type: shell
+      # params:
+      # cmd: "echo $USER"
+
+  # --- DOCS ---
+  - trigger: ':todo'
+    replace: 'TODO: $|$'
+
+  - trigger: ':fixme'
+    replace: 'FIXME: $|$'
+
+  - trigger: ':note'
+    replace: 'NOTE: $|$'
+
+  - trigger: ':mdbadge'
+    replace: '[![$|$](https://img.shields.io/badge/$|$-label-color?style=for-the-badge)](url)'
+
+  # --- PERSONAL BRAND ---
+  - trigger: ':myemail'
+    replace: 'anthony@coffey.codes'
+
+  - trigger: ':myemail'
+    replace: 'coffey.j.anthony@gmail.com'
+
+  - trigger: ':myphone'
+    replace: '737-932-4565'
+
+  - trigger: ':sig'
+    replace: |
+      Best,
+      Anthony Coffey
+      737-932-4565
+      https://coffey.codes
+      Schedule time with me: https://calendly.com/antcoffpersonal/meet
+
+  - trigger: ':website'
+    replace: 'https://coffey.codes'
+
+  - trigger: ':domain'
+    replace: 'coffey.codes'
