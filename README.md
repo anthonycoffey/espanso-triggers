@@ -31,7 +31,7 @@ cd $(espanso path) # or wherever your match folder lives
 git pull origin main
 ```
 
-That's it. Espanso picks up changes automatically.
+That's it. Espanso picks up changes automatically. Just make sure you swap out personal information with yours 🤖
 
 ---
 
