@@ -185,9 +185,10 @@ matches:
     replace: |
       Best,
       Anthony Coffey
-      737-932-4565
-      https://coffey.codes
-      Schedule time with me: https://calendly.com/antcoffpersonal/meet
+      737.932.4565
+      anthony@coffey.codes
+      linktr.ee/coffeycodes      
+      schedule time with me: https://bit.ly/44j8x5v
 
   - trigger: ':website'
     replace: 'https://coffey.codes'
