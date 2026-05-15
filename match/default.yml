@@ -175,7 +175,7 @@ matches:
   - trigger: ':myemail'
     replace: 'anthony@coffey.codes'
 
-  - trigger: ':myemail'
+  - trigger: ':email'
     replace: 'coffey.j.anthony@gmail.com'
 
   - trigger: ':myphone'
